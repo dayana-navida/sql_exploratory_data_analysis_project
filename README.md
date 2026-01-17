@@ -33,6 +33,10 @@ EDA-SQL-Project/
 │   ├── part_to_whole_analysis.sql
 │   ├── data_segmentation.sql
 │
+├── reports/
+│   ├── customer_report.sql
+│   ├── product_report.sql
+│
 └── README.md
 ```
 
@@ -98,6 +102,40 @@ Advanced EDA helps to **find trends, patterns, and performance insights**.
 
 ---
 
+## 📑 Business Reports
+
+These reports are created using **SQL Views** to provide **ready-to-use datasets** for dashboards and analysis.
+
+### 👥 Customer Report
+
+* Consolidated customer-level view
+* Includes:
+
+  * Customer details and age groups
+  * Total orders, sales, quantity, and products
+  * Customer lifespan and recency
+  * Customer segmentation (VIP, Regular, New)
+  * Average order value and monthly spend
+
+📄 File: `customer_report.sql`
+
+---
+
+### 📦 Product Report
+
+* Consolidated product-level view
+* Includes:
+
+  * Product details (category, subcategory, cost)
+  * Total orders, customers, sales, and quantity
+  * Product lifespan and recency
+  * Product performance segments (High, Mid, Low)
+  * Average order revenue and monthly revenue
+
+📄 File: `product_report.sql`
+
+---
+
 ## ❓ Key Business Questions Answered
 
 * How much sales did the business generate?
@@ -134,12 +172,14 @@ Advanced EDA helps to **find trends, patterns, and performance insights**.
 B.Tech | Aspiring Data Analyst / Business Analyst
 
 ---
-## 📚 Learning Resources
-This project was created as part of my learning journey.
-I referred to online tutorials and educational content,
-including the **Data with Baraa** YouTube channel,
-to understand SQL and Exploratory Data Analysis concepts.
 
+## 📚 Learning Resources
+
+This project was created as part of my learning journey.
+I referred to online tutorials and educational content, including the
+**Data with Baraa** YouTube channel, to understand SQL and Exploratory Data Analysis concepts.
+
+---
 
 ## ⭐ Final Note
 
