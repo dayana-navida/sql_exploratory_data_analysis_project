@@ -1,19 +1,35 @@
-----Find the date of first and last order
-SELECT 
-MAX(order_Date) as last_order,
-MIN(order_Date) as first_order
-FROM gold.fact_sales
+/*
+============================================================
+FILE NAME   : date_exploration.sql
+PROJECT     : Exploratory Data Analysis
+PURPOSE :
+- To explore date-related information in the dataset
+- To understand the time range of sales data
+- To identify customer age range using birth dates
+- To help beginners understand date analysis
+============================================================
+*/
 
----------How many years of sales are available
+--- Find the date of the first and last order
+--- This helps to understand the overall sales timeline
 SELECT 
-DATEDIFF(YEAR,MIN(order_Date),MAX(order_Date))
-FROM gold.fact_sales
+    MAX(order_date) AS last_order,
+    MIN(order_date) AS first_order
+FROM gold.fact_sales;
 
------Find the youngest and oldest customer
+
+--- Find how many years of sales data are available
+--- This helps to understand the length of historical data
 SELECT 
-MAX(birthdate) as youngest_customer,
-DATEDIFF(year,MAX(birthdate),GETDATE()) as youngest_age,
-MIN(birthdate) as oldest_customer,
-DATEDIFF(year,MIN(birthdate),GETDATE()) as oldest_age
-FROM gold.dim_customers
+    DATEDIFF(YEAR, MIN(order_date), MAX(order_date)) AS total_years_of_sales
+FROM gold.fact_sales;
 
+
+--- Find the youngest and oldest customers
+--- This helps to understand the customer age range
+SELECT 
+    MAX(birthdate) AS youngest_customer,
+    DATEDIFF(YEAR, MAX(birthdate), GETDATE()) AS youngest_age,
+    MIN(birthdate) AS oldest_customer,
+    DATEDIFF(YEAR, MIN(birthdate), GETDATE()) AS oldest_age
+FROM gold.dim_customers;
